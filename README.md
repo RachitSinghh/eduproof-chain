@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+# EduProof
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/e7ddac91-483e-4c9a-a919-ee3aae2826e0
+EduProof is a secure, blockchain-powered platform for issuing, storing, and verifying academic credentials for refugees, students, NGOs, and academic verifiers. By leveraging soulbound NFTs and zero-knowledge proofs, EduProof empowers displaced individuals to own and share their academic records globally, while enabling organizations and verifiers to authenticate credentials with trust and privacy.
 
-## How can I edit this code?
+## Purpose
 
-There are several ways of editing your application.
+- Provide refugees and displaced people with verifiable, tamper-proof academic credentials.
+- Enable NGOs and organizations to issue credentials securely.
+- Allow academic verifiers to authenticate records using blockchain and privacy-preserving technology.
 
-**Use Lovable**
+## User Flow
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e7ddac91-483e-4c9a-a919-ee3aae2826e0) and start prompting.
+1. **Landing Page:**  
+   Users are greeted with an introduction and can choose to get started or sign in.
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Authentication:**  
+   - Users can sign up or sign in as a Refugee/Student, NGO/Organization, or Academic Verifier.
+   - Sign-up collects role, name, email, password, and (optionally) organization.
 
-**Use your preferred IDE**
+3. **Role-Based Dashboards:**  
+   - **Refugee/Student:** View and share credentials, request new ones.
+   - **NGO/Organization:** Issue credentials, manage recipients.
+   - **Verifier:** Verify credentials using blockchain proofs.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+4. **Credential Management:**  
+   - Credentials are issued as soulbound NFTs.
+   - Zero-knowledge proofs ensure privacy and authenticity.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Technologies Used
 
-Follow these steps:
+- **Frontend:** React, TypeScript, Vite, Tailwind CSS, shadcn-ui, Radix UI
+- **Backend/Integration:** Supabase (auth, database), soulbound NFTs, zero-knowledge proofs
+- **Routing:** React Router
+- **State/Data:** React Query
+- **Other:** Lucide Icons, date-fns, zod
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Project Structure
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- `src/pages/` – Main pages (Landing, Auth, NotFound)
+- `src/components/` – UI components and dashboards
+- `src/hooks/` – Custom React hooks (auth, mobile, toast)
+- `src/integrations/supabase/` – Supabase client and types
+- `src/lib/` – Utility functions
+- `public/` – Static assets
+- `supabase/` – Supabase config and migrations
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. **Clone the repository:**
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd eduproof-passport-chain
+   ```
 
-**Edit a file directly in GitHub**
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
 
-**Use GitHub Codespaces**
+4. **Environment Variables:**
+   - Configure your Supabase credentials in the appropriate `.env` file.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+- Deploy via [Lovable](https://lovable.dev/) or your preferred platform.
+- For custom domains, see Lovable’s [custom domain guide](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide).
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a Pull Request.
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/e7ddac91-483e-4c9a-a919-ee3aae2826e0) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License.
