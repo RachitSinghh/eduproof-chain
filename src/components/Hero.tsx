@@ -41,7 +41,7 @@ const Hero = ({ onGetStarted }: HeroProps) => {
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
               Blockchain Credentials for the
-              <span className="bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent block">
+              <span className="bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent block drop-shadow-md">
                 Stateless & Displaced
               </span>
             </h1>
