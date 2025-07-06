@@ -9,7 +9,150 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      credentials: {
+        Row: {
+          blockchain_hash: string | null
+          created_at: string
+          credential_data: Json | null
+          degree_type: string
+          field_of_study: string
+          graduation_year: number | null
+          id: string
+          institution_name: string
+          refugee_id: string
+          updated_at: string
+          verification_status: string | null
+          verified_at: string | null
+          verified_by: string | null
+        }
+        Insert: {
+          blockchain_hash?: string | null
+          created_at?: string
+          credential_data?: Json | null
+          degree_type: string
+          field_of_study: string
+          graduation_year?: number | null
+          id?: string
+          institution_name: string
+          refugee_id: string
+          updated_at?: string
+          verification_status?: string | null
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Update: {
+          blockchain_hash?: string | null
+          created_at?: string
+          credential_data?: Json | null
+          degree_type?: string
+          field_of_study?: string
+          graduation_year?: number | null
+          id?: string
+          institution_name?: string
+          refugee_id?: string
+          updated_at?: string
+          verification_status?: string | null
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "credentials_refugee_id_fkey"
+            columns: ["refugee_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "credentials_verified_by_fkey"
+            columns: ["verified_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          country: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          organization_name: string | null
+          phone: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          organization_name?: string | null
+          phone?: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          organization_name?: string | null
+          phone?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      verification_requests: {
+        Row: {
+          created_at: string
+          credential_id: string
+          id: string
+          notes: string | null
+          status: string | null
+          updated_at: string
+          verifier_id: string
+        }
+        Insert: {
+          created_at?: string
+          credential_id: string
+          id?: string
+          notes?: string | null
+          status?: string | null
+          updated_at?: string
+          verifier_id: string
+        }
+        Update: {
+          created_at?: string
+          credential_id?: string
+          id?: string
+          notes?: string | null
+          status?: string | null
+          updated_at?: string
+          verifier_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "verification_requests_credential_id_fkey"
+            columns: ["credential_id"]
+            isOneToOne: false
+            referencedRelation: "credentials"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "verification_requests_verifier_id_fkey"
+            columns: ["verifier_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -18,7 +161,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      user_role: "refugee" | "ngo" | "verifier"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -133,6 +276,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: ["refugee", "ngo", "verifier"],
+    },
   },
 } as const

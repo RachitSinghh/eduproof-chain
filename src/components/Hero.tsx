@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Shield, Users, CheckCircle, Globe2, ArrowRight, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
   onGetStarted?: () => void;
@@ -27,9 +28,11 @@ const Hero = ({ onGetStarted }: HeroProps) => {
             <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-white/10">
               How it Works
             </Button>
-            <Button variant="secondary" size="sm">
-              Get Started
-            </Button>
+            <Link to="/auth">
+              <Button variant="secondary" size="sm">
+                Sign In
+              </Button>
+            </Link>
           </div>
         </nav>
 
