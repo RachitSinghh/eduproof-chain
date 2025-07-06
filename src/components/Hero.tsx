@@ -63,16 +63,17 @@ const Hero = ({ onGetStarted }: HeroProps) => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
-                variant="outline" 
+                variant="hero" 
                 size="lg" 
                 className="text-lg px-8 py-4 border-white/30 text-primary-foreground hover:bg-white/10"
+                
                 onClick={onGetStarted}
               >
                 <Shield className="mr-2 h-5 w-5" />
                 I'm an NGO/School
               </Button>
               <Button 
-                variant="outline" 
+                variant="hero" 
                 size="lg" 
                 className="text-lg px-8 py-4 border-white/30 text-primary-foreground hover:bg-white/10"
                 onClick={onGetStarted}
