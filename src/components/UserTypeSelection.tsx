@@ -153,7 +153,7 @@ const UserTypeSelection = ({ onSelectType }: UserTypeSelectionProps) => {
             <p className="text-primary-foreground/70 mb-4">
               New to EduProof? Learn how blockchain credentials are revolutionizing education for displaced communities.
             </p>
-            <Button variant="outline" size="lg" className="border-white/30 text-primary-foreground hover:bg-white/10">
+            <Button variant="hero" size="lg" className="border-white/30 text-primary-foreground hover:bg-white/10">
               <Globe2 className="mr-2 h-5 w-5" />
               Learn More
             </Button>
