@@ -67,10 +67,6 @@ EduProof is a secure, blockchain-powered platform for issuing, storing, and veri
 4. **Environment Variables:**
    - Configure your Supabase credentials in the appropriate `.env` file.
 
-## Deployment
-
-- Deploy via [Lovable](https://lovable.dev/) or your preferred platform.
-- For custom domains, see Lovable’s [custom domain guide](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide).
 
 ## Contributing
 
